@@ -14,6 +14,10 @@ int main(int argc, const char * argv[]) {
     
     generate_cards();
     shuffle_cards();
-    cout<<card[54].displayed_name<<endl;
-    return 0;
+    for(int i=1;i<=3;i++)
+    {
+        player[1].getCard(card[i]);
+    }
+    cout<<player[1].getNumberOfCards();
+    
 }

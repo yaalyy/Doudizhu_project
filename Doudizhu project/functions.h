@@ -52,7 +52,7 @@ void generate_cards()
 
 void shuffle_cards()
 {
-    srand(time(NULL));
+    srand((unsigned int) time(NULL));
     int n=54,index;
     Card tmp;
     for(int i=1; i<54; i++)

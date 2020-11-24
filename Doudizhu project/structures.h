@@ -9,6 +9,7 @@
 #define structures_h
 
 #include<string>
+#include<deque>
 using namespace std;
 
 class Card{
@@ -22,6 +23,33 @@ class Card{
         displayed_name=new_displayed_name;
     }
 }card[55];
+
+
+class Player{
+    
+private:
+    deque<Card> cardsInHand;
+    
+public:
+    void getCard(Card newCard)
+    {
+        cardsInHand.push_back(newCard);
+       
+    }
+    int getNumberOfCards()
+    {
+        int size = (unsigned int)cardsInHand.size();
+        return size;
+    }
+    void playCard(int cardOrder)
+    {
+        
+    }
+    
+    
+    
+    
+}player[4];
 
 
 #endif /* structures_h */
