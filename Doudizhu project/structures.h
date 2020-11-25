@@ -12,8 +12,8 @@
 #include<deque>
 using namespace std;
 
-class Card{
-  public:
+class Card{            
+  public:                            
     int value;
     string suit, displayed_name;
     void new_card(int new_value,string new_suit,string new_displayed_name)
@@ -36,14 +36,14 @@ public:
         cardsInHand.push_back(newCard);
        
     }
-    int getNumberOfCards()
+    int getNumberOfCards()    //return how many cards in hand
     {
         int size = (unsigned int)cardsInHand.size();
         return size;
     }
-    void playCard(int cardOrder)
+    void playCard(int cardOrder)   //delete a card selected and the cards after it move front
     {
-        deque<Card>::iterator iter = cardsInHand[cardorder];
+        deque<Card>::iterator iter = cardsInHand[cardorder];      //Here is a problem using deque
         cardsInHand.erase(iter);
     }
     
