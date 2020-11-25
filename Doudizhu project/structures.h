@@ -43,7 +43,8 @@ public:
     }
     void playCard(int cardOrder)
     {
-        
+        deque<Card>::iterator iter = cardsInHand[cardorder];
+        cardsInHand.erase(iter);
     }
     
     

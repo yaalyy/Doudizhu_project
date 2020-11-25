@@ -10,6 +10,8 @@
 #include "functions.h"
 using namespace std;
 
+
+
 int main(int argc, const char * argv[]) {
     
     generate_cards();
