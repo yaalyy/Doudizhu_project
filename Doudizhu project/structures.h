@@ -43,7 +43,8 @@ public:
     }
     void playCard(int cardOrder)   //delete a card selected and the cards after it move front
     {
-        deque<Card>::iterator iter = cardsInHand[cardorder];      //Here is a problem using deque
+        cardOrder = cardOrder - 1;
+        deque<Card>::iterator iter = cardsInHand.begin()+cardOrder;      
         cardsInHand.erase(iter);
     }
     
