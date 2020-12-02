@@ -16,11 +16,7 @@ int main(int argc, const char * argv[]) {
     
     generate_cards();
     shuffle_cards();
-    for(int i=1;i<=3;i++)
-    {
-        player[1].getCard(card[i]);
-    }
-    player[1].playCard(3);
-    cout<<player[1].getNumberOfCards();
+    allocate_cards();
+    
     
 }

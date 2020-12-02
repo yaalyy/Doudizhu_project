@@ -8,10 +8,11 @@
 #ifndef functions_h
 #define functions_h
 
-#include "structures.h"
 #include<cstdlib>
 #include<ctime>
-void generate_cards()
+#include "structures.h"
+
+void generate_cards()  //The index of the first card is 1 instead of 0
 {
     
     char suit[4][10]={"Hearts","Diamonds","Spades","Clubs"};
@@ -66,6 +67,21 @@ void shuffle_cards()
             }
      
         }
+
+}
+
+void allocate_cards() //Every player can get 17 cards, and then the landlord will get extra 3 cards
+{
+  int card_index=1;
+  while(card_index<=51)
+  {
+    for(int player_index=1;player_index<=3;player_index++)
+    {
+      player[player_index].getCard(card[card_index]);
+      card_index=card_index+1;
+    }
+  }                                 //Here should wait for a landlord
+
 
 }
 

@@ -12,8 +12,8 @@
 #include<deque>
 using namespace std;
 
-class Card{            
-  public:                            
+class Card{            //The class for each card
+  public:
     int value;
     string suit, displayed_name;
     void new_card(int new_value,string new_suit,string new_displayed_name)
@@ -22,10 +22,10 @@ class Card{
         suit=new_suit;
         displayed_name=new_displayed_name;
     }
-}card[55];
+};
 
 
-class Player{
+class Player{   //The class for each player
     
 private:
     deque<Card> cardsInHand;
@@ -44,14 +44,18 @@ public:
     void playCard(int cardOrder)   //delete a card selected and the cards after it move front
     {
         cardOrder = cardOrder - 1;
-        deque<Card>::iterator iter = cardsInHand.begin()+cardOrder;      
+        deque<Card>::iterator iter = cardsInHand.begin()+cardOrder;
         cardsInHand.erase(iter);
     }
     
     
     
     
-}player[4];
+};
+
+extern Card card[];
+extern Player player[];
+
 
 
 #endif /* structures_h */
