@@ -12,7 +12,7 @@
 #include<deque>
 using namespace std;
 
-class Card{            
+class Card{            //The class for each card
   public:                            
     int value;
     string suit, displayed_name;
@@ -22,10 +22,10 @@ class Card{
         suit=new_suit;
         displayed_name=new_displayed_name;
     }
-}card[55];
+};
 
 
-class Player{
+class Player{   //The class for each player
     
 private:
     deque<Card> cardsInHand;
@@ -51,7 +51,9 @@ public:
     
     
     
-}player[4];
+};
 
+extern Card card[];
+extern Player player[];
 
 #endif /* structures_h */
