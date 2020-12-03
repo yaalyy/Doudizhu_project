@@ -29,7 +29,7 @@ class Player{   //The class for each player
     
 private:
     deque<Card> cardsInHand;
-    
+    bool landlord_identifier=false;
 public:
     void getCard(Card newCard)
     {
@@ -47,7 +47,14 @@ public:
         deque<Card>::iterator iter = cardsInHand.begin()+cardOrder;
         cardsInHand.erase(iter);
     }
-    
+    void become_landlord()
+    {
+        landlord_identifier=true;
+    }
+    bool isLandlord()
+    {
+        return landlord_identifier;
+    }
     
     
     

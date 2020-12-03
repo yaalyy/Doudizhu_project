@@ -8,10 +8,13 @@
 #ifndef functions_h
 #define functions_h
 
+#include<iostream>
 #include<cstdlib>
+#include<string>
 #include<ctime>
 #include "structures.h"
 
+using namespace std;
 void generate_cards()  //The index of the first card is 1 instead of 0
 {
     
@@ -51,7 +54,7 @@ void generate_cards()  //The index of the first card is 1 instead of 0
 
 }
 
-void shuffle_cards()
+void shuffle_cards()    //A shuffle algorithem from the Internet, which can make every card has the same probability to be each position in a deck.
 {
     srand((unsigned int) time(NULL));
     int n=54,index;
@@ -72,18 +75,52 @@ void shuffle_cards()
 
 void allocate_cards() //Every player can get 17 cards, and then the landlord will get extra 3 cards
 {
-  int card_index=1;
-  while(card_index<=51)
-  {
-    for(int player_index=1;player_index<=3;player_index++)
+    int card_index=1;
+    while(card_index<=51)
     {
-      player[player_index].getCard(card[card_index]);
-      card_index=card_index+1;
+        for(int player_index=1;player_index<=3;player_index++)
+        {
+            player[player_index].getCard(card[card_index]);
+            card_index=card_index+1;
+        }
     }
-  }                                 //Here should wait for a landlord
+    for(int i=1;i<=3;i++)
+    {
+        if (player[i].isLandlord() == true)
+        {
+            player[i].getCard(card[52]);
+            player[i].getCard(card[53]);
+            player[i].getCard(card[54]);
+            break;
+        }
+    }
+
 
 
 }
 
+bool select_landlord()   //If nobody decides to be the landlord, return false
+{
+    cout<<"Do you want to be a landlord?"<<endl;
+    string response;
+    cin>>response;
+    if ((response=="yes")||(response=="Yes")||(response=="YES"))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    
+}
+
+void sort_cardsInHand()  //unfinished
+{
+    for(int i=1;i<=3;i++)
+    {
+          
+    }
+}
 
 #endif /* functions_h */
