@@ -5,17 +5,22 @@
 //  Created by ARCK on 17/11/2020.
 //
 
-#include<iostream>
-#include "functions.h"
+
 #include "structures.h"
-using namespace std;
+#include "functions.h"
+
 
 
 
 int main(int argc, const char * argv[]) {
-    
+   
     generate_cards();
     shuffle_cards();
     allocate_cards();
-    
+    if (select_landlord()==true)
+    {
+        player[1].become_landlord();
+    }
+
+    return 0;
 }

@@ -13,7 +13,7 @@
 using namespace std;
 
 class Card{            //The class for each card
-  public:                            
+  public:
     int value;
     string suit, displayed_name;
     void new_card(int new_value,string new_suit,string new_displayed_name)
@@ -29,7 +29,7 @@ class Player{   //The class for each player
     
 private:
     deque<Card> cardsInHand;
-    
+    bool landlord_identifier=false;
 public:
     void getCard(Card newCard)
     {
@@ -44,10 +44,17 @@ public:
     void playCard(int cardOrder)   //delete a card selected and the cards after it move front
     {
         cardOrder = cardOrder - 1;
-        deque<Card>::iterator iter = cardsInHand.begin()+cardOrder;      
+        deque<Card>::iterator iter = cardsInHand.begin()+cardOrder;
         cardsInHand.erase(iter);
     }
-    
+    void become_landlord()
+    {
+        landlord_identifier=true;
+    }
+    bool isLandlord()
+    {
+        return landlord_identifier;
+    }
     
     
     
@@ -55,5 +62,7 @@ public:
 
 extern Card card[];
 extern Player player[];
+
+
 
 #endif /* structures_h */
