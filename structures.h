@@ -57,20 +57,15 @@ public:
         return landlord_identifier;
     }
     
-    bool comp(Card i,Card j)   //This function is for the procedure of sorting cards in hand
-    {
-      return (i.value<j.value);
-    }
 
     void sort_cardsInHand()  //unfinished
     {
-    for(int player_id=1;player_id<=3;player_id++)
-    {     //Here use an array to export cards in hand, then erase the deque and sort the array, import the array into the deque
-      sort(cardsInHand.begin(),cardsInHand.end(),comp);
+    
+      std::sort(cardsInHand.begin(),cardsInHand.end(),[](const Card &i, const Card &j){return i.value<j.value;});
     
 
-    }
-}
+    
+    } 
     
     
 };
