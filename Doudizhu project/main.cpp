@@ -17,10 +17,10 @@ int main(int argc, const char * argv[]) {
     generate_cards();
     shuffle_cards();
     allocate_cards();
-    if (select_landlord()==true)
-    {
-        player[1].become_landlord();
-    }
+    sort_cardsInHand();
+    select_landlord();
+    allocate_cards_for_landlord();
+    sort_cardsInHand();
 
     return 0;
 }

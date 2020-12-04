@@ -9,7 +9,9 @@
 #define structures_h
 
 #include<string>
+#include<iostream>
 #include<deque>
+#include<algorithm>
 using namespace std;
 
 class Card{            //The class for each card
@@ -56,13 +58,35 @@ public:
         return landlord_identifier;
     }
     
+
+    void sort_cardsInHand()  
+    {
+    
+      std::sort(cardsInHand.begin(),cardsInHand.end(),[](const Card &i, const Card &j){return i.value<j.value;});
+    
+
+    
+    }
+    
+    void show_cardsInHand()
+    {
+        for (int i = 0; i < cardsInHand.size(); i++) {
+            cout << cardsInHand.at(i).displayed_name << ", ";
+        }
+        cout<<endl;
+        
+    }
+    
+    void clear_cardsInHand()
+    {
+        cardsInHand.clear();
+    }
     
     
 };
 
 extern Card card[];
 extern Player player[];
-
 
 
 #endif /* structures_h */
