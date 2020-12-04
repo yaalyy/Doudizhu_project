@@ -93,7 +93,7 @@ void allocate_cards() //Every player can get 17 cards, and then the landlord wil
 
 }
 
-void allocate_cards_for_landlord()
+void allocate_cards_for_landlord()   //After choosing a landlord, allocate three extra cards to the landlord
 {
     for(int player_index=1;player_index<=3;player_index++)
     {
@@ -108,7 +108,7 @@ void allocate_cards_for_landlord()
 }
 
 
-void sort_cardsInHand()
+void sort_cardsInHand()   //Sort cards in hand of all three players
 {
     for(int player_id=1;player_id<=3;player_id++)
     {
@@ -116,7 +116,7 @@ void sort_cardsInHand()
     }
 }
 
-void select_landlord()   //If nobody decides to be the landlord, return false
+void select_landlord()   //If nobody decides to be the landlord, cards will be shuffled and allocated again
 {
     cout<<"Your cards in hand are:"<<endl;
     player[1].show_cardsInHand();
