@@ -57,9 +57,9 @@ void generate_cards()  //The index of the first card is 1 instead of 0
 void shuffle_cards()    //A shuffle algorithem from the Internet, which can make every card has the same probability to be each position in a deck.
 {
     srand((unsigned int) time(NULL));
-    int n=54,index;
+    int n=55,index;
     Card tmp;
-    for(int i=1; i<54; i++)
+    for(int i=1; i<=54; i++)
         {
             index=rand()%(n-i)+i;
             if(index!=i)
@@ -76,14 +76,25 @@ void shuffle_cards()    //A shuffle algorithem from the Internet, which can make
 void allocate_cards() //Every player can get 17 cards, and then the landlord will get extra 3 cards
 {
     int card_index=1;
+    for(int player_index=1;player_index<=3;player_index++)
+    {
+        player[player_index].clear_cardsInHand();
+    }
     while(card_index<=51)
     {
         for(int player_index=1;player_index<=3;player_index++)
         {
+            
             player[player_index].getCard(card[card_index]);
             card_index=card_index+1;
         }
     }
+    
+
+}
+
+void allocate_cards_for_landlord()   //After choosing a landlord, allocate three extra cards to the landlord
+{
     for(int player_index=1;player_index<=3;player_index++)
     {
         if (player[player_index].isLandlord() == true)
@@ -94,27 +105,38 @@ void allocate_cards() //Every player can get 17 cards, and then the landlord wil
             break;
         }
     }
-
-
-
 }
 
-bool select_landlord()   //If nobody decides to be the landlord, return false
+
+void sort_cardsInHand()   //Sort cards in hand of all three players
 {
+    for(int player_id=1;player_id<=3;player_id++)
+    {
+        player[player_id].sort_cardsInHand();
+    }
+}
+
+void select_landlord()   //If nobody decides to be the landlord, cards will be shuffled and allocated again
+{
+    cout<<"Your cards in hand are:"<<endl;
+    player[1].show_cardsInHand();
+    cout<<"The landlord cards are "<<card[52].displayed_name<<" , "<<card[53].displayed_name<<" and "<<card[54].displayed_name<<endl;
     cout<<"Do you want to be a landlord?"<<endl;
     string response;
     cin>>response;
     if ((response=="yes")||(response=="Yes")||(response=="YES"))
     {
-        return true;
+        player[1].become_landlord();
     }
     else
     {
-        return false;
+        shuffle_cards();
+        allocate_cards();
+        sort_cardsInHand();
+        select_landlord();
     }
     
 }
-
 
 
 #endif /* functions_h */

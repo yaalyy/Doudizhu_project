@@ -9,6 +9,7 @@
 #define structures_h
 
 #include<string>
+#include<iostream>
 #include<deque>
 #include<algorithm>
 using namespace std;
@@ -48,24 +49,38 @@ public:
         deque<Card>::iterator iter = cardsInHand.begin()+cardOrder;
         cardsInHand.erase(iter);
     }
-    void become_landlord()
+    void become_landlord()  //Change the identifier status of the landlord
     {
         landlord_identifier=true;
     }
-    bool isLandlord()
+    bool isLandlord()   //Check if this player is a landlord
     {
         return landlord_identifier;
     }
     
 
-    void sort_cardsInHand()  //unfinished
+    void sort_cardsInHand()   //Sort cards in hand
     {
     
       std::sort(cardsInHand.begin(),cardsInHand.end(),[](const Card &i, const Card &j){return i.value<j.value;});
     
 
     
-    } 
+    }
+    
+    void show_cardsInHand()   //Print cards in hand
+    {
+        for (int i = 0; i < cardsInHand.size(); i++) {
+            cout << cardsInHand.at(i).displayed_name << ", ";
+        }
+        cout<<endl;
+        
+    }
+    
+    void clear_cardsInHand()  //Clear cards in hand
+    {
+        cardsInHand.clear();
+    }
     
     
 };
