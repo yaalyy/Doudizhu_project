@@ -26,6 +26,56 @@ class Card{            //The class for each card
     }
 };
 
+enum Type{      //Any possible valid group of cards
+  Unknown,//Unknown type
+    Single,//single card
+    Pair,//a pair of cards
+    Three,//Three cards with the same number
+    Straight,
+    PairSeq,//Pair sequence
+    ThreeSeq,// Unuse
+    ThreePlus,//Three plus one
+    Plane,
+    Quadruplet,//Four plus two
+    Bomb,
+  Rocket,
+};
+
+class cardGroup{   //A group of cards
+  private:
+    Type type=Unknown; //The type of a group of cards
+    int count=0; //the number of cards
+    int value=0; //the weight of this group, used for AI to decide to play cards
+    deque<Card> cards;// the cards in the group
+  public:
+    void clear() //reset this group
+    {
+      count=0;
+      value=0;
+      type=Unknown;
+      cards.clear();
+    }
+    void getCard(Card newCard)
+    {
+        cards.push_back(newCard);
+        count++;
+       
+    }
+    int getCount()    //return the number of cards
+    {
+        return count;
+    }
+
+    void DeleteCard(int cardOrder)   //delete a card selected and the cards after it move front
+    {
+        cardOrder = cardOrder - 1;
+        deque<Card>::iterator iter = cards.begin()+cardOrder;
+        cards.erase(iter);
+        count--;
+    }
+
+};
+
 
 class Player{   //The class for each player
     

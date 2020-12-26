@@ -138,4 +138,9 @@ void select_landlord()   //If nobody decides to be the landlord, cards will be s
     
 }
 
+void analysisSelection()
+{
+  
+}
+
 #endif /* functions_h */
