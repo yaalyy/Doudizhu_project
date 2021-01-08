@@ -18,7 +18,7 @@ class Card{            //The class for each card
   public:
     int value;
     string suit, displayed_name;
-    void new_card(int new_value,string new_suit,string new_displayed_name)
+    void new_card(int new_value,string new_suit,string new_displayed_name)  //This method looks not very useful.
     {
         value=new_value;
         suit=new_suit;
@@ -30,18 +30,19 @@ enum Type{      //Any possible valid group of cards
   Unknown,//Unknown type
     Single,//single card
     Pair,//a pair of cards
-    Three,//Three cards with the same number
+    Triplet,//Three cards with the same number
     Straight,
     PairSeq,//Pair sequence
-    ThreeSeq,// Unuse
-    ThreePlus,//Three plus one
+    ThreeSeq,// Unuse       Triplet+2
+    ThreePlus,//Three plus one   Triplet+1
     Plane,
     Quadruplet,//Four plus two
     Bomb,
   Rocket,
 };
 
-class cardGroup{   //A group of cards
+class CardGroup{   //A group of cards
+    
   private:
     Type type=Unknown; //The type of a group of cards
     int count=0; //the number of cards
@@ -63,6 +64,7 @@ class cardGroup{   //A group of cards
     }
     int getCount()    //return the number of cards
     {
+        
         return count;
     }
 
@@ -72,6 +74,88 @@ class cardGroup{   //A group of cards
         deque<Card>::iterator iter = cards.begin()+cardOrder;
         cards.erase(iter);
         count--;
+    }
+    
+    void sort_cards()   //Sort cards
+    {
+    
+      std::sort(cards.begin(),cards.end(),[](const Card &i, const Card &j){return i.value<j.value;});
+    
+    }
+    
+    void show_cards()   //Print cards
+    {
+        for (int i = 0; i < count; i++) {
+            cout << cards.at(i).displayed_name << ", ";
+        }
+        cout<<endl;      //******Here is a print. REMEMBER to change it after GUI
+        
+    }
+    
+    void analysis_type()   //Here assume cards have already been sorted
+    {
+        if(count == 1) //single card
+        {
+            type=Single;
+        }
+        
+        else if(count == 2)   //two cards
+        {
+            if(cards.at(0).displayed_name == cards.at(1).displayed_name)
+            {
+                type = Pair;
+            }
+            
+            else if((cards.at(0).displayed_name == "Black Joker")&&(cards.at(1).displayed_name == "Red Joker"))
+            {
+                type = Rocket;    //*****This part very requires testing*****
+            }
+        }
+        
+        else if(count == 3)  //three cards
+        {
+            if((cards.at(0).displayed_name == cards.at(1).displayed_name)&&((cards.at(1).displayed_name == cards.at(2).displayed_name)))
+            {
+                type = Triplet;
+            }
+        }
+        
+        else if(count == 4)  //four cards
+        {
+            if((cards.at(0).displayed_name == cards.at(1).displayed_name)&&(cards.at(1).displayed_name == cards.at(2).displayed_name)&&(cards.at(2).displayed_name == cards.at(3).displayed_name))
+            {
+                type = Bomb;
+            }
+            else if(cards.at(1).displayed_name == cards.at(2).displayed_name)
+            {
+                if(cards.at(1).displayed_name == cards.at(0).displayed_name)
+                {
+                    if(cards.at(0).displayed_name != cards.at(3).displayed_name)
+                    {
+                        type = ThreePlus;
+                    }
+                }
+                else if(cards.at(1).displayed_name == cards.at(3).displayed_name)
+                {
+                    if(cards.at(0).displayed_name != cards.at(3).displayed_name)
+                    {
+                        type = ThreePlus;
+                    }
+                }
+            }
+        }
+        
+        else if(count >= 5)
+        {
+            //Straight
+            // Pair Sequence
+            // Plane
+            // Triplet+2
+            // Quadruplet
+            
+        }
+        
+        
     }
 
 };
@@ -98,7 +182,7 @@ public:
         cardOrder = cardOrder - 1;
         deque<Card>::iterator iter = cardsInHand.begin()+cardOrder;
         cardsInHand.erase(iter);
-    }
+    }   
     void become_landlord()  //Change the identifier status of the landlord
     {
         landlord_identifier=true;
@@ -123,14 +207,21 @@ public:
         for (int i = 0; i < cardsInHand.size(); i++) {
             cout << cardsInHand.at(i).displayed_name << ", ";
         }
-        cout<<endl;
+        cout<<endl;  //******Here is a print. REMEMBER to change it after GUI
         
     }
+    
     
     void clear_cardsInHand()  //Clear cards in hand
     {
         cardsInHand.clear();
     }
+       
+    Card pick_one_card(int num)   
+    {
+        return cardsInHand.at(num);
+    }
+    
     
     
 };

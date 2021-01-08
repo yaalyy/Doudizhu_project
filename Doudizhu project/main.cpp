@@ -15,12 +15,11 @@
 int main(int argc, const char * argv[]) {
    
     generate_cards();
-    shuffle_cards();
+    
     allocate_cards();
-    sort_cardsInHand();
-    select_landlord();
-    allocate_cards_for_landlord();
-    sort_cardsInHand();
-
+    CardGroup buffer;
+    buffer.getCard(player[1].pick_one_card(0));
+    buffer.getCard(player[2].pick_one_card(4));
+    buffer.analysis_type();
     return 0;
 }
