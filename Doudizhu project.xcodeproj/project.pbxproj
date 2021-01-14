@@ -278,7 +278,7 @@
 				2F04888925640F3900D69636 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2F04888A25640F3900D69636 /* Build configuration list for PBXNativeTarget "Doudizhu project" */ = {
 			isa = XCConfigurationList;
@@ -287,7 +287,7 @@
 				2F04888C25640F3900D69636 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

@@ -15,6 +15,7 @@
 #include "structures.h"
 
 using namespace std;
+
 void generate_cards()  //The index of the first card is 1 instead of 0
 {
     
@@ -138,9 +139,32 @@ void select_landlord()   //If nobody decides to be the landlord, cards will be s
     
 }
 
-void analysisSelection()
+bool checkContinuous(int cards[],unsigned int len)
 {
-  
+    
+    for(int item=0;item<len-1;item++)
+    {
+        
+        if((cards[item]+1) != cards[item+1])
+        {
+            return false;
+    
+        }
+    }
+    return true;
 }
+
+bool isEven(int num)
+{
+    if (num%2==0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 
 #endif /* functions_h */
