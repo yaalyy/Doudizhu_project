@@ -180,11 +180,11 @@ class CardGroup{   //A group of cards
         extern bool checkContinuous(int cards[],unsigned int len);
         string transporter_1[20];
         int transporter_2[20];
-        for(int item=0;item<=card_index.three_index.size()-1;item++)
+        for(unsigned long item=0;item<=card_index.three_index.size()-1;item++)
         {
             transporter_1[item] = card_index.three_index[item];  //copy data in three_index into a local array
         }
-        for(int item=0;item<=card_index.three_index.size()-1;item++)  //transfer string into integer, so checkContinuous can be used
+        for(unsigned long item=0;item<=card_index.three_index.size()-1;item++)  //transfer string into integer, so checkContinuous can be used
         {
             if(transporter_1[item] == "A")
             {
@@ -266,11 +266,11 @@ class CardGroup{   //A group of cards
         extern bool checkContinuous(int cards[],unsigned int len);
         string transporter_1[20];
         int transporter_2[20];
-        for(int item=0;item<=card_index.double_index.size()-1;item++)
+        for(unsigned long int item=0;item<=card_index.double_index.size()-1;item++)
         {
             transporter_1[item] = card_index.double_index[item];  //copy data in double_index into a local array
         }
-        for(int item=0;item<=card_index.double_index.size()-1;item++)  //transfer string into integer, so checkContinuous can be used
+        for(unsigned long int item=0;item<=card_index.double_index.size()-1;item++)  //transfer string into integer, so checkContinuous can be used
         {
             if(transporter_1[item] == "A")
             {
@@ -588,7 +588,7 @@ public:
     
     void show_cardsInHand()   //Print cards in hand
     {
-        for (int i = 0; i < cardsInHand.size(); i++) {
+        for (unsigned long int i = 0; i < cardsInHand.size(); i++) {
             cout << cardsInHand.at(i).displayed_name << ", ";
         }
         cout<<endl;  //******Here is a print. REMEMBER to change it after GUI
