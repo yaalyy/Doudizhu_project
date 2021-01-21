@@ -10,16 +10,19 @@ CONFIG += c++11
 
 SOURCES += \
     functions.cpp \
+    index.cpp \
     main.cpp \
     mainwindow.cpp \
     structures.cpp
 
 HEADERS += \
     functions.h \
+    index.h \
     mainwindow.h \
     structures.h
 
 FORMS += \
+    index.ui \
     mainwindow.ui
 
 TRANSLATIONS += \
@@ -29,3 +32,9 @@ TRANSLATIONS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc
+
+DISTFILES += \
+    resources/bk.png
