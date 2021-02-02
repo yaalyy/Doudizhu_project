@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>resources/register.jpg</file>
+        <file>resources/card2.png</file>
+        <file>resources/farmer.png</file>
+        <file>resources/lord.png</file>
     </qresource>
 </RCC>

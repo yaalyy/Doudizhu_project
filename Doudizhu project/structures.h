@@ -8,11 +8,17 @@
 #ifndef structures_h
 #define structures_h
 
+//*****ABANDONED CODES*******
+
+/*
+
 #include<string>
 #include<iostream>
 #include<deque>
 #include<algorithm>
 #include<vector>
+
+
 using namespace std;
 
 class Card{            //The class for each card
@@ -613,6 +619,6 @@ public:
 extern Card card[];
 extern Player player[];
 
-
+*/
 
 #endif /* structures_h */

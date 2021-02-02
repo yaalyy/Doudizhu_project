@@ -8,6 +8,9 @@
 #ifndef functions_h
 #define functions_h
 
+//ABANDONED codes
+/*
+
 #include<iostream>
 #include<cstdlib>
 #include<string>
@@ -166,5 +169,6 @@ bool isEven(int num)
     }
 }
 
+*/
 
 #endif /* functions_h */

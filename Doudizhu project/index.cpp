@@ -1,6 +1,6 @@
 #include "index.h"
 #include "ui_index.h"
-//#include "maininterface.h"
+#include "maininterface.h"
 #include <QPixmap>
 #include <QPainter>
 #include <QFont>
@@ -61,7 +61,7 @@ void Index::originDanjiButton()
  * }
 
  */
-/*
+
 bool Index::eventFilter(QObject *obj, QEvent *event)
 {
     if(obj==_danji && event->type()==QEvent::MouseButtonPress && _canDanji)
@@ -75,4 +75,4 @@ bool Index::eventFilter(QObject *obj, QEvent *event)
     }
 
     return QWidget::eventFilter(obj,event);
-}  */
+}

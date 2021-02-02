@@ -21,7 +21,7 @@ private:
     void originWindow();                            //initialise the window
     void paintEvent(QPaintEvent * event);           //set the background image
     void originDanjiButton();                       //initialise the button of single mode
-  //  bool eventFilter(QObject * obj, QEvent * event);// avoid being clicked many times
+    bool eventFilter(QObject * obj, QEvent * event);// avoid being clicked many times
 private:
     Ui::Index *ui;
     //ui member:
