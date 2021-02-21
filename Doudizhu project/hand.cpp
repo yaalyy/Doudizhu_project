@@ -1,3 +1,11 @@
+//
+//  hand.cpp
+//  Doudizhu project
+//
+//  Created by ARCK on 25/01/2021.
+//
+
+
 #include "hand.h"
 
 Hand::Hand()

@@ -1,3 +1,10 @@
+//
+//  card.cpp
+//  Doudizhu project
+//
+//  Created by ARCK on 22/01/2021.
+//
+
 #include "card.h"
 
 //create a card by value and suit

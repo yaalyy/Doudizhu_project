@@ -1,3 +1,10 @@
+//
+//  cardpicture.h
+//  Doudizhu project
+//
+//  Created by ARCK on 25/01/2021.
+//
+
 #ifndef CARDPICTURE_H
 #define CARDPICTURE_H
 

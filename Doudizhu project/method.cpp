@@ -1,3 +1,10 @@
+//
+//  method.cpp
+//  Doudizhu project
+//
+//  Created by ARCK on 26/01/2021.
+//
+
 #include "method.h"
 
 Method::Method(Player* player,QList<card> cards)

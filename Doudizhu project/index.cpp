@@ -1,3 +1,10 @@
+//
+//  index.cpp
+//  Doudizhu project
+//
+//  Created by ARCK on 26/01/2021.
+//
+
 #include "index.h"
 #include "ui_index.h"
 #include "maininterface.h"

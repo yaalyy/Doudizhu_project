@@ -1,3 +1,10 @@
+//
+//  gameprocess.h
+//  Doudizhu project
+//
+//  Created by ARCK on 26/01/2021.
+//
+
 #ifndef GAMEPROCESS_H
 #define GAMEPROCESS_H
 

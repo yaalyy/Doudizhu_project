@@ -1,3 +1,10 @@
+//
+//  cardpicture.cpp
+//  Doudizhu project
+//
+//  Created by ARCK on 25/01/2021.
+//
+
 #include "cardpicture.h"
 
 CardPicture::CardPicture(QWidget *parent) : QWidget(parent)

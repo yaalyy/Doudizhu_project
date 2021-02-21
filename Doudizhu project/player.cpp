@@ -1,3 +1,10 @@
+//
+//  player.cpp
+//  Doudizhu project
+//
+//  Created by ARCK on 26/01/2021.
+//
+
 #include "player.h"
 
 Player::Player(QWidget *parent) : QWidget(parent)

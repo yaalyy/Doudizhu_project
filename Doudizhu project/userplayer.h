@@ -1,3 +1,10 @@
+//
+//  userplayer.h
+//  Doudizhu project
+//
+//  Created by ARCK on 26/01/2021.
+//
+
 #ifndef USERPLAYER_H
 #define USERPLAYER_H
 

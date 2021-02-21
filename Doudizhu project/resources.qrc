@@ -4,5 +4,13 @@
         <file>resources/card2.png</file>
         <file>resources/farmer.png</file>
         <file>resources/lord.png</file>
+        <file>resources/clock.png</file>
+        <file>resources/bk.png</file>
+        <file>resources/shuffleCardsMusic.wav</file>
+        <file>resources/loseMusic.wav</file>
+        <file>resources/win.wav</file>
+        <file>resources/bkMusic.wav</file>
+        <file>resources/planeMusic.wav</file>
+        <file>resources/passMusic.wav</file>
     </qresource>
 </RCC>

@@ -1,3 +1,10 @@
+//
+//  maininterface.h
+//  Doudizhu project
+//
+//  Created by ARCK on 03/02/2021.
+//
+
 #ifndef MAININTERFACE_H
 #define MAININTERFACE_H
 

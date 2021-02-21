@@ -1,3 +1,10 @@
+//
+//  maininterface.cpp
+//  Doudizhu project
+//
+//  Created by ARCK on 03/02/2021.
+//
+
 #include "maininterface.h"
 #include "ui_maininterface.h"
 #include <QDebug>
@@ -61,8 +68,9 @@ void MainInterface::Init()
 
     //images of a clock
     m_clock=new QLabel(this);
-    m_clock->setPixmap(QPixmap(":/img/res/clock.png"));
-    m_clock->move((width()-m_clock->width())/2+20,(height()-m_clock->width())/2-50);
+    m_clock->setPixmap(QPixmap(":/resources/clock.png"));
+  //  m_clock->move((width()-m_clock->width())/2-10,(height()-m_clock->width())/2+30);
+    m_clock->move(434,305);
     m_clock->hide();
 
     m_rePickingCards = new QLabel(this);
@@ -72,9 +80,12 @@ void MainInterface::Init()
     m_rePickingCards->move((width()-m_clock->width())/2-50,(height()-m_clock->height())/2);
     m_rePickingCards->hide();
 
+    QPalette timer_color;
+    timer_color.setColor(QPalette::WindowText,Qt::red);
+
     m_timeLabel=new QLabel(this);
     m_timeLabel->setFont(ft);
-    m_timeLabel->setPalette(pa);
+    m_timeLabel->setPalette(timer_color);
     m_timeLabel->move(490,350);
     m_timeLabel->hide();
 
@@ -136,16 +147,16 @@ void MainInterface::Init()
     /*the button to continue the next game*/
     m_continue= new QPushButton(this);
     m_continue->hide();
-    m_continue->setText("Continue a game");
+    m_continue->setText("New Game");
     m_continue->move((width()-m_continue->width())/2-30,height()-card_height-40);
 
     connect(m_continue,SIGNAL(clicked()),this,SLOT(on_continue_clicked()));
 
     /*Sound*/
-    bkMusic=new QSound(":/sound/res/bkMusic.wav",this);
-    winMusic=new QSound(":/sound/res/win.wav",this);
-    loseMusic=new QSound(":/sound/res/loseMusic.wav",this);
-    shuffleCardsMusic=new QSound(":/sound/res/shuffleCardsMusic.wav",this);
+    bkMusic=new QSound(":/resources/bkMusic.wav",this);
+    winMusic=new QSound(":/resources/win.wav",this);
+    loseMusic=new QSound(":/resources/loseMusic.wav",this);
+    shuffleCardsMusic=new QSound(":/resources/shuffleCardsMusic.wav",this);
     noCallMusic=new QSound(":/sound/res/bujiao.wav",this);
     callLordMusic=new QSound(":/sound/res/jiaodizhu.wav",this);
     bkMusic->play();
@@ -496,7 +507,7 @@ void MainInterface::PickingCardsAnimation(Player* player)
 void MainInterface::paintEvent(QPaintEvent *event)
 {
     /*background image*/
-    QPixmap bk(":/img/res/bk.png");
+    QPixmap bk(":/resources/bk.png");
     QPainter painter(this);
     painter.drawPixmap(this->rect(),bk);
 }
@@ -668,7 +679,7 @@ void MainInterface::PlayingHand(Player* player,QList<card> cards)
     switch(type)
     {
     case Hand_Pass:
-        handtype=new QSound(":/sound/res/passMusic.wav",this);
+        handtype=new QSound(":/resources/passMusic.wav",this);
         player->passLabel->show();
         break;
     case Hand_Triple:
@@ -683,7 +694,7 @@ void MainInterface::PlayingHand(Player* player,QList<card> cards)
     case Hand_Plane:
     case Hand_Plane_Two_Single:
     case Hand_Plane_Two_Pair:
-        handtype=new QSound(":/sound/res/planeMusic.wav",this);
+        handtype=new QSound(":/resources/planeMusic.wav",this);
         break;
     case Hand_Bomb:
         handtype=new QSound(":/sound/res/zhadan.wav",this);

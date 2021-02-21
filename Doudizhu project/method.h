@@ -1,3 +1,10 @@
+//
+//  method.h
+//  Doudizhu project
+//
+//  Created by ARCK on 26/01/2021.
+//
+
 #ifndef METHOD_H
 #define METHOD_H
 

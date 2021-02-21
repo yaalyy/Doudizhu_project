@@ -1,3 +1,10 @@
+//
+//  main.cpp
+//  Doudizhu project
+//
+//  Created by ARCK on 02/02/2021.
+//
+
 #include "index.h"
 #include <QApplication>
 

@@ -1,3 +1,10 @@
+//
+//  hand.h
+//  Doudizhu project
+//
+//  Created by ARCK on 25/01/2021.
+//
+
 #ifndef HAND_H
 #define HAND_H
 
