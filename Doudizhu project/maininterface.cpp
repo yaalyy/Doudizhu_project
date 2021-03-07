@@ -157,8 +157,8 @@ void MainInterface::Init()
     winMusic=new QSound(":/resources/win.wav",this);
     loseMusic=new QSound(":/resources/loseMusic.wav",this);
     shuffleCardsMusic=new QSound(":/resources/shuffleCardsMusic.wav",this);
-    noCallMusic=new QSound(":/sound/res/bujiao.wav",this);
-    callLordMusic=new QSound(":/sound/res/jiaodizhu.wav",this);
+   // noCallMusic=new QSound(":/sound/res/bujiao.wav",this);
+   // callLordMusic=new QSound(":/sound/res/jiaodizhu.wav",this);
     bkMusic->play();
     bkMusic->setLoops(-1);
 
@@ -683,13 +683,13 @@ void MainInterface::PlayingHand(Player* player,QList<card> cards)
         player->passLabel->show();
         break;
     case Hand_Triple:
-        handtype=new QSound(":/sound/res/sange.wav",this);
+        //handtype=new QSound(":/sound/res/sange.wav",this);
         break;
     case Hand_Triple_Single:
-        handtype=new QSound(":/sound/res/sandaiyi.wav",this);
+        //handtype=new QSound(":/sound/res/sandaiyi.wav",this);
         break;
     case Hand_Triple_Pair:
-        handtype=new QSound(":/sound/res/sandaiyidui.wav",this);
+        //handtype=new QSound(":/sound/res/sandaiyidui.wav",this);
         break;
     case Hand_Plane:
     case Hand_Plane_Two_Single:
@@ -697,19 +697,19 @@ void MainInterface::PlayingHand(Player* player,QList<card> cards)
         handtype=new QSound(":/resources/planeMusic.wav",this);
         break;
     case Hand_Bomb:
-        handtype=new QSound(":/sound/res/zhadan.wav",this);
+        //handtype=new QSound(":/sound/res/zhadan.wav",this);
         break;
     case Hand_Bomb_Jokers:
-        handtype=new QSound(":/sound/res/bombJokerMusic.wav",this);
+        //handtype=new QSound(":/sound/res/bombJokerMusic.wav",this);
         break;
     case Hand_Seq_Single:
-        handtype=new QSound(":/sound/res/shunzi.wav",this);
+        //handtype=new QSound(":/sound/res/shunzi.wav",this);
         break;
     case Hand_Seq_Pair:
-        handtype=new QSound(":/sound/res/liandui.wav",this);
+        //handtype=new QSound(":/sound/res/liandui.wav",this);
         break;
 
-    case Hand_Single:
+ /*   case Hand_Single:
     {
         switch(cards[0].point)
         {
@@ -807,7 +807,7 @@ void MainInterface::PlayingHand(Player* player,QList<card> cards)
             break;
         }
         break;
-    }
+    }  */
 
     }
     handtype->play();
@@ -821,20 +821,20 @@ void MainInterface::CallingLord(Player *player, int bet)
     {
     case 3:
         player->betLabel->setText(("3"));
-        callLordMusic->play();
+        //callLordMusic->play();
         break;
     case 2:
         player->betLabel->setText("2");
-        callLordMusic->play();
+        //callLordMusic->play();
         break;
     case 1:
         player->betLabel->setText("1");
-        callLordMusic->play();
+        //callLordMusic->play();
         break;
     case 0:
         player->betLabel->setText("Do Not Bid");
        // player->betLabel->move(440,height()-card_height-50);
-        noCallMusic->play();
+        //noCallMusic->play();
         break;
     }
 

@@ -105,8 +105,8 @@ private:
     QSound* bkMusic;
     QSound* winMusic;
     QSound* loseMusic;
-    QSound* callLordMusic;
-    QSound* noCallMusic;
+  //  QSound* callLordMusic;
+  //  QSound* noCallMusic;
     QSound* handtype;
 
 };
