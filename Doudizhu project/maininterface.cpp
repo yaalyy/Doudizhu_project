@@ -137,8 +137,8 @@ void MainInterface::Init()
     m_pass->setText("Pass");
     m_tip->setText("Reminder");
     m_pass->move(width()/2-160,height()-card_height-40);
-    m_playhand->move(width()/2-40,height()-card_height-40);
-    m_tip->move(width()/2+60,height()-card_height-40);
+    m_playhand->move(width()/2+60,height()-card_height-40);
+    m_tip->move(width()/2-40,height()-card_height-40);
 
     connect(m_playhand,SIGNAL(clicked()),this,SLOT(on_playhand_clicked()));
     connect(m_pass,SIGNAL(clicked()),this,SLOT(on_pass_clicked()));
@@ -683,13 +683,13 @@ void MainInterface::PlayingHand(Player* player,QList<card> cards)
         player->passLabel->show();
         break;
     case Hand_Triple:
-        //handtype=new QSound(":/sound/res/sange.wav",this);
+        handtype=new QSound(":/sound/res/sange.wav",this);
         break;
     case Hand_Triple_Single:
-        //handtype=new QSound(":/sound/res/sandaiyi.wav",this);
+        handtype=new QSound(":/sound/res/sandaiyi.wav",this);
         break;
     case Hand_Triple_Pair:
-        //handtype=new QSound(":/sound/res/sandaiyidui.wav",this);
+        handtype=new QSound(":/sound/res/sandaiyidui.wav",this);
         break;
     case Hand_Plane:
     case Hand_Plane_Two_Single:
@@ -697,19 +697,19 @@ void MainInterface::PlayingHand(Player* player,QList<card> cards)
         handtype=new QSound(":/resources/planeMusic.wav",this);
         break;
     case Hand_Bomb:
-        //handtype=new QSound(":/sound/res/zhadan.wav",this);
+        handtype=new QSound(":/sound/res/zhadan.wav",this);
         break;
     case Hand_Bomb_Jokers:
-        //handtype=new QSound(":/sound/res/bombJokerMusic.wav",this);
+        handtype=new QSound(":/sound/res/bombJokerMusic.wav",this);
         break;
     case Hand_Seq_Single:
-        //handtype=new QSound(":/sound/res/shunzi.wav",this);
+        handtype=new QSound(":/sound/res/shunzi.wav",this);
         break;
     case Hand_Seq_Pair:
-        //handtype=new QSound(":/sound/res/liandui.wav",this);
+        handtype=new QSound(":/sound/res/liandui.wav",this);
         break;
 
- /*   case Hand_Single:
+    case Hand_Single:
     {
         switch(cards[0].point)
         {
@@ -764,6 +764,7 @@ void MainInterface::PlayingHand(Player* player,QList<card> cards)
     }
     case Hand_Pair:
     {
+
         switch((int)cards[0].point)
         {
         case Card_A:
@@ -807,7 +808,7 @@ void MainInterface::PlayingHand(Player* player,QList<card> cards)
             break;
         }
         break;
-    }  */
+    }
 
     }
     handtype->play();
