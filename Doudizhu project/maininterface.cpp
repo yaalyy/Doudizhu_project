@@ -157,6 +157,7 @@ void MainInterface::Init()
     winMusic=new QSound(":/resources/win.wav",this);
     loseMusic=new QSound(":/resources/loseMusic.wav",this);
     shuffleCardsMusic=new QSound(":/resources/shuffleCardsMusic.wav",this);
+    passMusic=new QSound(":/resources/passMusic.wav",this);
    // noCallMusic=new QSound(":/sound/res/bujiao.wav",this);
    // callLordMusic=new QSound(":/sound/res/jiaodizhu.wav",this);
     bkMusic->play();
@@ -903,7 +904,6 @@ void MainInterface::on_pass_clicked()
         cardpic->setSelected(false);
     m_Selected.clear();
     UpdateCards(m_gameprocess->getDownPlayer());
-
     m_gameprocess->getDownPlayer()->playHand(QList<card>());
 }
 

@@ -108,6 +108,7 @@ private:
   //  QSound* callLordMusic;
   //  QSound* noCallMusic;
     QSound* handtype;
+    QSound* passMusic;
 
 };
 
