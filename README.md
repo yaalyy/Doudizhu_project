@@ -1,3 +1,4 @@
+# Doudizhu_project
 This project is a poker game called Doudizhu（A Chinese tradtional card game), which is developed by Qt Creator.
 
 To compile this project, **Qt** and **C++** are required.
